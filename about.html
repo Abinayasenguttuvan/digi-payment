@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Our Story & Values</title>
+    <!-- Links to the unified style sheet -->
+    <link rel="stylesheet" href="about.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <!-- <a href="index.html" class="logo">
+          <img
+            src="path/to/your/logo.png"
+            alt="Company Logo"
+            class="logo-img"
+          />
+        </a> -->
+        <a href="index.html">
+            <img src="./image.png" alt="Stackly Logo" style="width: 100px;">
+          </a>
+        <div class="nav-links">
+          <ul class="main-menu">
+            <li class="menu-item has-dropdown">
+              <a href="index.html">HOME</a>
+              <ul class="dropdown-content">
+                <li><a href="home2.html">HOME2</a></li>
+              </ul>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="products.html">PRODUCTS</a>
+              <ul class="dropdown-content">
+                <li><a href="product1.html">Stackly Pay</a></li>
+                <li><a href="product2.html">Stackly Wallet</a></li>
+                <li><a href="product3.html">Stackly Business API</a></li>
+              </ul>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="about.html">ABOUT</a>
+              <ul class="dropdown-content">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="memb.html">Members</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="blog.html">BLOG</a></li>
+            <li class="menu-item"><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <a href="login.html"><button class="login-button">Login</button></a>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+      </nav>
+    </header>
+    <!-- NAVBAR PLACEHOLDER: The dynamic navbar will be loaded here -->
+    <header id="navbar-placeholder"></header>
+
+    <main class="about-page-main">
+      <div class="about-header">
+        <h1 class="about-title">Our Story: Payments Reimagined</h1>
+        <p class="about-subtitle">
+          Built on a foundation of integrity and innovation, we're changing how
+          the world handles money.
+        </p>
+      </div>
+
+      <!-- Section 1: Company History -->
+      <section class="about-section history-section">
+        <div class="history-content">
+          <h2>The Journey: From Startup to Fintech Leader</h2>
+          <p>
+            Founded in 2018 by a small team of engineers frustrated with legacy
+            banking systems, our company was born out of a simple idea:
+            **payments should be instant, secure, and invisible**. We began in a
+            small office in downtown New York, focusing entirely on building a
+            robust API that could handle transactions at scale without the
+            complexity or high costs of traditional processors.
+          </p>
+          <p>
+            Today, we process billions in transactions annually, powering
+            thousands of businesses globally. Our focus remains the same:
+            leveraging cutting-edge technology, like AI-driven risk management
+            and blockchain verification, to deliver a truly modern financial
+            experience.
+          </p>
+        </div>
+        <div class="history-image">
+          <!-- Placeholder for an image representing company history (e.g., team photo, first office) -->
+          <img
+            src="path/to/history_image_1.jpg"
+            alt="Team collaborating in a modern office"
+            class="image-blank-path"
+          />
+        </div>
+      </section>
+
+      <!-- Section 2: Core Values -->
+      <section class="about-section values-section">
+        <h2 class="section-heading">Our Unwavering Core Values</h2>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <h3>1. Integrity & Transparency</h3>
+            <p>
+              We believe in honest pricing, clear communication, and absolute
+              security. Your trust is our most valuable asset, and we work every
+              day to earn it.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <h3>2. Relentless Innovation</h3>
+            <p>
+              The financial world never stands still. We commit to continuous
+              improvement, exploring new technologies to keep your payments
+              future-proof.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <h3>3. Customer-Centric Design</h3>
+            <p>
+              Every decision, from API structure to user interface, is made with
+              the goal of simplifying the financial lives of our customers.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <h3>4. Global Responsibility</h3>
+            <p>
+              We strive to make financial inclusion possible worldwide by
+              providing accessible, low-cost solutions to businesses in emerging
+              markets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Leadership & Vision (Optional Image Block) -->
+      <section class="about-section vision-section">
+        <div class="vision-image">
+          <!-- Placeholder for an image representing leadership or company vision -->
+          <img
+            src="path/to/vision_image_2.jpg"
+            alt="A person looking confidently at a city skyline"
+            class="image-blank-path"
+          />
+        </div>
+        <div class="vision-content">
+          <h2>Our Vision for the Future</h2>
+          <p>
+            To be the essential engine powering the next generation of digital
+            commerce. We see a world where complex financial infrastructure
+            fades into the background, allowing innovators and entrepreneurs to
+            thrive without friction. We are building that world, one transaction
+            at a time.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. JAVASCRIPT: Required for the dynamic navbar -->
+    <script src="script.js"></script>
+
+    <script>
+      // Adjust the path ('navbar.html') if needed
+      loadHTML("navbar-placeholder", "navbar.html");
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (toggleButton && navLinks) {
+          toggleButton.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
+      });
+    </script>
+
+<footer class="footer">
+    <div class="footer-container">
+  
+      <!-- Column 1: Logo and About -->
+      <div class="footer-section about">
+        <img src="./image.png" alt="Stackly Logo" class="footer-logo">
+        <h3>Stackly Digital Payment Services</h3>
+        <p>Empowering businesses and users with fast, secure, and seamless digital transactions.</p>
+      </div>
+
+      
+  
+      <!-- Column 2: Quick Links -->
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">About Us</a></li>
+          <li><a href="about.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Column 3: Contact -->
+      <div class="footer-section contact">
+        <h4>Get in Touch</h4>
+        <p> MMR complex,salem,Tamil nadu 636008</p>
+        <p>Email: <a href="mailto:support@stackly.com">info@thestackly.com</a></p>
+        <p>Phone: +91 70107 92745</p>
+    
+        <div class="social-icons">
+            <a href="https://www.facebook.com/people/Stackly-Stackly/pfbid0JtGU9e9Lr3qi7T7zwqd7znjcKBFgJkRNUT9dkSAfVgj5Fea9cnwPDAaKFdqcZVvBl/?rdid=6mn5QnllxYJS3OSw&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BrqaZkJRe%2F"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/The_Stackly"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/the-stackly/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/thestackly/#"><i class="fab fa-instagram"></i></a>
+          </div>
+              <iframe
+                  src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                  width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <div class="copyright">
+              <p>© 2025 Stackly | All Rights Reserved</p>
+            </div>
+        
+          </footer>
+  
+  </body>
+</html>

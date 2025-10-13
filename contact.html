@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Payment Application</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ------------------------------------------- */
+      /* 1. GLOBAL & RESET */
+      /* ------------------------------------------- */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f9fafb;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      
+
+      /* ------------------------------------------- */
+      /* 2. NAVBAR STYLES (Integrated) */
+      /* ------------------------------------------- */
+
+      .navbar {
+        background-color: #2c3e50;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .navbar .logo-img {
+        height: 40px;
+        width: auto;
+        display: block;
+      }
+      .navbar .main-menu {
+        list-style: none;
+        display: flex;
+      }
+      .navbar .menu-item {
+        position: relative;
+      }
+      .navbar .menu-item > a {
+        display: block;
+        color: white;
+        padding: 15px 20px;
+        transition: background-color 0.3s;
+        font-weight: bold;
+      }
+      .navbar .menu-item > a:hover {
+        background-color: #34495e;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #34495e;
+        min-width: 180px;
+        z-index: 10;
+        list-style: none;
+        border-top: 3px solid #3498db;
+      }
+      .dropdown-content li a {
+        color: white;
+        padding: 12px 16px;
+        display: block;
+        transition: background-color 0.3s;
+      }
+      .dropdown-content li a:hover {
+        background-color: #2980b9;
+      }
+      .navbar .menu-item.has-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Login Button */
+      .login-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      .login-button:hover {
+        background-color: #c0392b;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      /* Navbar Mobile Styles */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-wrap: wrap;
+        }
+        .navbar .login-button {
+          order: 3;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-toggle {
+          display: block;
+        }
+        .navbar .nav-links {
+          width: 100%;
+          display: none;
+        }
+        .navbar .nav-links.active {
+          display: block;
+        }
+        .navbar .main-menu {
+          flex-direction: column;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-item > a {
+          text-align: left;
+        }
+        .dropdown-content {
+          position: static;
+          width: 100%;
+          border-left: 5px solid #3498db;
+          padding-left: 10px;
+        }
+        .dropdown-content li a {
+          padding-left: 35px;
+          background-color: #445970;
+        }
+        .navbar .menu-item.has-dropdown:hover .dropdown-content {
+          display: none;
+        }
+      }
+
+      /* ------------------------------------------- */
+      /* 3. CONTACT PAGE STYLES */
+      /* ------------------------------------------- */
+      .contact-header-combined {
+        max-width: 800px;
+        margin: 60px auto 40px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .contact-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #111827;
+        margin-bottom: 10px;
+      }
+      .contact-subtitle {
+        font-size: 1.1rem;
+        color: #4b5563;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* --- GRID LAYOUT FOR FORM AND MAP --- */
+      .form-map-grid {
+        display: grid;
+        /* Default: single column (stacked) on small screens */
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 1280px;
+        margin: 0px auto 80px auto;
+        padding: 0 20px;
+      }
+
+      /* Desktop Layout (Side-by-Side) */
+      @media (min-width: 900px) {
+        .form-map-grid {
+          grid-template-columns: 3fr 2fr; /* Form 60%, Map 40% */
+          gap: 60px;
+          align-items: stretch;
+        }
+      }
+
+      /* --- Form Styling --- */
+      .contact-form-container {
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+        text-align: left;
+      }
+      .form-group.large {
+        grid-column: 1 / -1;
+      }
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #374151;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #2563eb;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+      .submit-button {
+        grid-column: 1 / -1;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+      }
+      .submit-button:hover {
+        background-color: #1d4ed8;
+      }
+      @media (max-width: 600px) {
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+        .form-group.large,
+        .submit-button {
+          grid-column: auto;
+        }
+      }
+
+      /* --- Map Styling --- */
+      .map-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .map-label {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #111827;
+        text-align: center;
+        padding-top: 10px;
+      }
+      .map-container-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add shadow here */
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .map-container-wrapper iframe {
+        width: 100%;
+        height: 450px; /* Default height */
+        min-height: 400px;
+        display: block;
+        flex-grow: 1; /* Allows it to fill the column height */
+      }
+      @media (min-width: 900px) {
+        .map-container-wrapper iframe {
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. NAVBAR (Integrated directly for reliability) -->
+    <header>
+      <nav class="navbar">
+        <!-- <a href="index.html" class="logo">
+          <img
+            src="path/to/your/logo.png"
+            alt="Company Logo"
+            class="logo-img"
+          />
+        </a> -->
+        <a href="index.html">
+            <img src="./image.png" alt="Stackly Logo" style="width: 100px;">
+          </a>
+        <div class="nav-links">
+          <ul class="main-menu">
+            <li class="menu-item has-dropdown">
+              <a href="index.html">HOME</a>
+              <ul class="dropdown-content">
+                <li><a href="home2.html">HOME2</a></li>
+              </ul>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="products.html">PRODUCTS</a>
+              <ul class="dropdown-content">
+                <li><a href="product1.html">Stackly Pay</a></li>
+                <li><a href="product2.html">Stackly Wallet</a></li>
+                <li><a href="product3.html">Stackly Business API</a></li>
+              </ul>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="about.html">ABOUT</a>
+              <ul class="dropdown-content">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="memb.html">Members</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="blog.html">BLOG</a></li>
+            <li class="menu-item"><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <a href="login.html"><button class="login-button">Login</button></a>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+      </nav>
+    </header>
+
+    <main class="contact-page-main">
+      <!-- Global Header for the Contact Page -->
+      <div class="contact-header-combined">
+        <h2 class="contact-title">Contact Our Team</h2>
+        <p class="contact-subtitle">
+          We're here to help you revolutionize your payments. Fill out the form,
+          or find us at our New York headquarters.
+        </p>
+      </div>
+
+      <!-- 2. Side-by-Side Content: Form and Map -->
+      <section class="form-map-grid">
+        <!-- Contact Form Column (60% width on desktop) -->
+        <div class="contact-form-column">
+          <div class="contact-form-container">
+            <form class="contact-form" action="404E.html">
+              <div class="form-group">
+                <label for="name">Your Name</label
+                ><input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label
+                ><input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label
+                ><input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="Question about pricing"
+                />
+              </div>
+              <div class="form-group"></div>
+              <!-- Spacer for form layout -->
+              <div class="form-group large">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="I would like to know more about..."
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-button">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Google Map Column (40% width on desktop) -->
+        <div class="map-column">
+          <h3 class="map-label">New York Headquarters</h3>
+          <div class="map-container-wrapper">
+            <!-- Embedded Google Map of New York -->
+            <iframe
+              src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+              title="stackly-salem"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. JAVASCRIPT FOR MOBILE TOGGLE -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (toggleButton && navLinks) {
+          toggleButton.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
+      });
+    </script>
+
+  </body>
+</html>

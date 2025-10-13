@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Payments & Economy Insights</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ------------------------------------------- */
+      /* 1. GLOBAL & RESET */
+      /* ------------------------------------------- */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f9fafb;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* ------------------------------------------- */
+      /* 2. NAVBAR STYLES (Integrated) */
+      /* ------------------------------------------- */
+
+      .navbar {
+        background-color: #2c3e50;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .navbar .logo-img {
+        height: 40px;
+        width: auto;
+        display: block;
+      }
+      .navbar .main-menu {
+        list-style: none;
+        display: flex;
+      }
+      .navbar .menu-item {
+        position: relative;
+      }
+      .navbar .menu-item > a {
+        display: block;
+        color: white;
+        padding: 15px 20px;
+        transition: background-color 0.3s;
+        font-weight: bold;
+      }
+      .navbar .menu-item > a:hover {
+        background-color: #34495e;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #34495e;
+        min-width: 180px;
+        z-index: 10;
+        list-style: none;
+        border-top: 3px solid #3498db;
+      }
+      .dropdown-content li a {
+        color: white;
+        padding: 12px 16px;
+        display: block;
+        transition: background-color 0.3s;
+      }
+      .dropdown-content li a:hover {
+        background-color: #2980b9;
+      }
+      .navbar .menu-item.has-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Login Button */
+      .login-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      .login-button:hover {
+        background-color: #c0392b;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      /* Navbar Mobile Styles */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-wrap: wrap;
+        }
+        .navbar .login-button {
+          order: 3;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-toggle {
+          display: block;
+        }
+        .navbar .nav-links {
+          width: 100%;
+          display: none;
+        }
+        .navbar .nav-links.active {
+          display: block;
+        }
+        .navbar .main-menu {
+          flex-direction: column;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-item > a {
+          text-align: left;
+        }
+        .dropdown-content {
+          position: static;
+          width: 100%;
+          border-left: 5px solid #3498db;
+          padding-left: 10px;
+        }
+        .dropdown-content li a {
+          padding-left: 35px;
+          background-color: #445970;
+        }
+        .navbar .menu-item.has-dropdown:hover .dropdown-content {
+          display: none;
+        }
+      }
+
+      /* ------------------------------------------- */
+      /* 3. BLOG PAGE STYLES (New) */
+      /* ------------------------------------------- */
+
+      .blog-page-main {
+        max-width: 1280px;
+        margin: 40px auto 80px auto;
+        padding: 0 20px;
+      }
+
+      .blog-header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 20px 0;
+        border-bottom: 1px solid #dcdcdc;
+      }
+
+      .blog-header h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .blog-header p {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+      }
+
+      /* Blog Grid Layout (Main content and Sidebar) */
+      .blog-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Default: stack on mobile */
+        gap: 40px;
+      }
+
+      @media (min-width: 900px) {
+        .blog-container {
+          /* Main content (70%) and Sidebar (30%) */
+          grid-template-columns: 3fr 1fr;
+        }
+      }
+
+      /* Main Content Area - Blog Posts */
+      .blog-post {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        border-left: 5px solid #3498db; /* Accent color */
+      }
+
+      .post-tag {
+        display: inline-block;
+        background-color: #3498db;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .blog-post h2 {
+        font-size: 1.8rem;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+
+      .post-meta {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+        margin-bottom: 20px;
+      }
+
+      .blog-post p {
+        color: #34495e;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .read-more {
+        color: #3498db;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      .read-more:hover {
+        color: #2980b9;
+      }
+
+      /* Sidebar Styling */
+      .sidebar {
+        padding: 20px;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        height: fit-content;
+      }
+
+      .sidebar h3 {
+        font-size: 1.4rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #bdc3c7;
+        padding-bottom: 5px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin-bottom: 10px;
+      }
+
+      .sidebar ul li a {
+        color: #34495e;
+        transition: color 0.2s;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .sidebar ul li a:hover {
+        color: #3498db;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. NAVBAR (Integrated directly) -->
+    <header>
+      <nav class="navbar">
+        <!-- <a href="index.html" class="logo">
+          <img
+            src="path/to/your/logo.png"
+            alt="Company Logo"
+            class="logo-img"
+          />
+        </a> -->
+        <a href="index.html">
+            <img src="./image.png" alt="Stackly Logo" style="width: 100px;">
+          </a>
+        <div class="nav-links">
+          <ul class="main-menu">
+            <li class="menu-item has-dropdown">
+              <a href="index.html">HOME</a>
+              <ul class="dropdown-content">
+                <li><a href="home2.html">HOME2</a></li>
+              </ul>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="products.html">PRODUCTS</a>
+              <ul class="dropdown-content">
+                <li><a href="product1.html">Stackly Pay</a></li>
+                <li><a href="product2.html">Stackly Wallet</a></li>
+                <li><a href="product3.html">Stackly Business API</a></li>
+              </ul>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="about.html">ABOUT</a>
+              <ul class="dropdown-content">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="memb.html">Members</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="blog.html">BLOG</a></li>
+            <li class="menu-item"><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <a href="login.html"><button class="login-button">Login</button></a>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+      </nav>
+    </header>
+
+    <main class="blog-page-main">
+      <div class="blog-header">
+        <h1>Payment & Economy Insights</h1>
+        <p>
+          Your source for news on fintech, global markets, and digital currency
+          trends.
+        </p>
+      </div>
+
+      <div class="blog-container">
+        <!-- Main Content Column -->
+        <div class="main-content">
+          <!-- Blog Post 1: Payments -->
+          <article class="blog-post">
+            <span class="post-tag">Payments</span>
+            <h2>
+              The Rise of Instant Payments: What it Means for Small Businesses
+            </h2>
+            <p class="post-meta">Posted by Jane Doe on October 12, 2025</p>
+            <p>
+              Instant payment systems are rapidly reshaping the global financial
+              landscape. For small businesses, this shift offers unprecedented
+              advantages, including immediate access to funds, improved cash
+              flow management, and enhanced customer satisfaction. We dive into
+              the technology driving this change, focusing on real-time gross
+              settlement (RTGS) and its practical application for local
+              merchants.
+            </p>
+            <a href="404E.html" class="read-more">Continue Reading &rarr;</a>
+          </article>
+
+          <!-- Blog Post 2: Economy -->
+          <article class="blog-post">
+            <span class="post-tag">Economy</span>
+            <h2>
+              Global Inflation vs. Digital Currency Adoption: A Correlative
+              Study
+            </h2>
+            <p class="post-meta">Posted by John Smith on September 28, 2025</p>
+            <p>
+              As major world economies grapple with sustained inflation,
+              interest in digital and decentralized currencies has soared. This
+              article explores the relationship between high consumer price
+              indexes and the rate at which businesses and consumers are
+              adopting stablecoins and central bank digital currencies (CBDCs).
+              Is crypto a hedge against economic instability, or simply a
+              parallel market?
+            </p>
+            <a href="404E.html" class="read-more">Continue Reading &rarr;</a>
+          </article>
+
+          <!-- Blog Post 3: Fintech -->
+          <article class="blog-post">
+            <span class="post-tag">Fintech</span>
+            <h2>
+              Future-Proofing Your Fintech Strategy with AI-Powered Risk
+              Assessment
+            </h2>
+            <p class="post-meta">Posted by Alex Lee on September 15, 2025</p>
+            <p>
+              Artificial Intelligence is no longer an optional feature in
+              financial technology; it's a necessity. From detecting subtle
+              fraud patterns to automating credit scoring, AI tools provide
+              precision and speed traditional models cannot match. Learn how to
+              implement cutting-edge machine learning models to strengthen your
+              platform's security and compliance posture.
+            </p>
+            <a href="404E.html" class="read-more">Continue Reading &rarr;</a>
+          </article>
+        </div>
+
+        <!-- Sidebar Column -->
+        <aside class="sidebar">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="404E.html">Payment Tech (12)</a></li>
+            <li><a href="404E.html">Macro Economy (8)</a></li>
+            <li><a href="404E.html">Digital Currency (5)</a></li>
+            <li><a href="404E.html">Fintech Regulation (4)</a></li>
+          </ul>
+
+          <h3>Recent Posts</h3>
+          <ul>
+            <li>
+              <a href="404E.html">Q3 Earnings: Payment Processor Review</a>
+            </li>
+            <li>
+              <a href="404E.html"
+                >The Impact of Interest Rate Hikes on Credit</a
+              >
+            </li>
+            <li>
+              <a href="404E.html">Why QR Code Payments Are Dominating Asia</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+
+    <!-- JAVASCRIPT FOR MOBILE TOGGLE -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (toggleButton && navLinks) {
+          toggleButton.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
+      });
+    </script>
+
+<footer class="footer">
+    <div class="footer-container">
+  
+      <!-- Column 1: Logo and About -->
+      <div class="footer-section about">
+        <img src="./image.png" alt="Stackly Logo" class="footer-logo">
+        <h3>Stackly Digital Payment Services</h3>
+        <p>Empowering businesses and users with fast, secure, and seamless digital transactions.</p>
+      </div>
+
+      
+  
+      <!-- Column 2: Quick Links -->
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">About Us</a></li>
+          <li><a href="about.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Column 3: Contact -->
+      <div class="footer-section contact">
+        <h4>Get in Touch</h4>
+        <p> MMR complex,salem,Tamil nadu 636008</p>
+        <p>Email: <a href="mailto:support@stackly.com">info@thestackly.com</a></p>
+        <p>Phone: +91 70107 92745</p>
+    
+        <div class="social-icons">
+            <a href="https://www.facebook.com/people/Stackly-Stackly/pfbid0JtGU9e9Lr3qi7T7zwqd7znjcKBFgJkRNUT9dkSAfVgj5Fea9cnwPDAaKFdqcZVvBl/?rdid=6mn5QnllxYJS3OSw&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BrqaZkJRe%2F"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/The_Stackly"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/the-stackly/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/thestackly/#"><i class="fab fa-instagram"></i></a>
+          </div>
+              <iframe
+                  src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                  width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <div class="copyright">
+              <p>© 2025 Stackly | All Rights Reserved</p>
+            </div>
+        
+          </footer>
+  
+  </body>
+</html>
