@@ -21,6 +21,11 @@
         <a href="services1.html">Services</a>
         <a href="blog1.html">Blog</a>
         <a href="contact1.html">Contact</a>
+
+        <a href="login.html"><button class="login-button">Login</button></a>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          &#9776;
+        </button>
       </nav>
     </div>
   </header>
@@ -96,6 +101,20 @@ header {
     transition: width 0.3s ease;
   }
   
+
+  .login-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      .login-button:hover {
+        background-color: #c0392b;
+      }
   nav a:hover {
     color: #1abc9c;
   }
@@ -238,7 +257,7 @@ nav a:hover::after {
   body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f7f9fc;
-    color: #2c3e50;
+    color: white;
     line-height: 1.6;
     
   }
@@ -359,18 +378,18 @@ nav a:hover::after {
     
     body { font-family: Arial, sans-serif; background: #f5f5f5;  }
     /* .container { max-width: 800px; margin: auto; } */
-    .blog-list, .blog-detail { padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    .blog-list, .blog-detail { padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(238, 236, 236, 0.1); margin-bottom: 20px; }
     body {
-    background-image: url('./image.png');
+    background-image: url('./digi.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-    /* .blog-card { border-bottom: 1px solid #ddd; padding: 10px 0; } */
-    /* .blog-card:last-child { border-bottom: none; } */
-    /* .blog-card h3 { margin: 0 0 5px; cursor: pointer; color: #007bff; } */
-    /* .back-btn { margin-top: 20px; display: inline-block; color: #007bff; cursor: pointer; } */
+    .blog-card { border-bottom: 1px solid #ddd; padding: 10px 0; }
+    .blog-card:last-child { border-bottom: none; }
+    .blog-card h3 { margin: 0 0 5px; cursor: pointer; color: #007bff; }
+    .back-btn { margin-top: 20px; display: inline-block; color: #007bff; cursor: pointer; }
     select { padding: 8px; margin-bottom: 20px; font-size: 16px; } */
 
     /* Footer */
@@ -536,6 +555,7 @@ nav a:hover::after {
   
   
   
+  
   </style>
 </head>
 <body>
@@ -544,7 +564,7 @@ nav a:hover::after {
 
     <!-- Blog List View -->
     <div id="blogList" class="blog-list">
-      <h2>Digital Marketing Blog</h2>
+      
       
       <!-- Category Filter -->
       <label for="categoryFilter">Filter by Category:</label>

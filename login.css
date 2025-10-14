@@ -968,7 +968,7 @@ body {
   /* Sets minimum height to fill the screen minus the estimated navbar height */
   min-height: calc(100vh - 60px);
   padding: 40px 20px;
-  background-color: #ecf0f1; /* Light contrasting background */
+  /* background-color: #ecf0f1; Light contrasting background */
 }
 
 .login-container {
