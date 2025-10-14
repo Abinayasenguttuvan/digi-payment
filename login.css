@@ -15,13 +15,6 @@ body {
  }  
 
 
- body {
-  background-image: url('./image1\.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 
 /* ------------------------------------------- */
 /* 2. NAVBAR STYLES */
