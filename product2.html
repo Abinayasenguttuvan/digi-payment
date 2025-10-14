@@ -3,198 +3,516 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stackly Pay - Product Overview</title>
-    <!-- Link to the cumulative site style sheet -->
-    <link rel="stylesheet" href="product1.css" />
+    <title>tackly Wallet - Digital Payment</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
+      
     />
-    <style>
-      body {
-        background-image: url('./image1.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- 1. NAVBAR - Inserted directly -->
+  <header>
+    <nav class="navbar">
+      
+      <a href="index.html">
+          <img src="./image.png" alt="Stackly Logo" style="width: 100px;">
+        </a>
+
+      <div class="nav-links">
+        <ul class="main-menu">
+          <li class="menu-item has-dropdown">
+            <a href="index.html">HOME</a>
+            <ul class="dropdown-content">
+              <li><a href="#home2">HOME2</a></li>
+            </ul>
+          </li>
+          <li class="menu-item has-dropdown">
+            <a href="#products">PRODUCTS</a>
+            <ul class="dropdown-content">
+              <li><a href="product1.html">Stackly Pay</a></li>
+              <li><a href="product2.html">Stackly Wallet</a></li>
+              <li><a href="product3.html">Stackly Business API</a></li>
+            </ul>
+          </li>
+          <li class="menu-item has-dropdown">
+            <a href="#about">ABOUT</a>
+            <ul class="dropdown-content">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="memb.html">Members</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="blog.html">BLOG</a></li>
+          <li class="menu-item"><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+
+      <a href="login.html"><button class="login-button">Login</button></a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+    </nav>
+  </header>
+
+  <style>
+
+
+      /* ------------------------------------------- */
+      /* 1. GLOBAL & RESET */
+      /* ------------------------------------------- */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
-      </style>
+    
+    
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f9fafb;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* ------------------------------------------- */
+      /* 2. NAVBAR STYLES */
+      /* ------------------------------------------- */
+      .navbar {
+        background-color: #2c3e50;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .navbar .logo-img {
+        height: 40px;
+        width: auto;
+        display: block;
+      }
+      .navbar .main-menu {
+        list-style: none;
+        display: flex;
+      }
+      .navbar .menu-item {
+        position: relative;
+      }
+      .navbar .menu-item > a {
+        display: block;
+        color: white;
+        padding: 15px 20px;
+        transition: background-color 0.3s;
+        font-weight: bold;
+      }
+      .navbar .menu-item > a:hover {
+        background-color: #34495e;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #34495e;
+        min-width: 180px;
+        z-index: 10;
+        list-style: none;
+        border-top: 3px solid #3498db;
+      }
+      .dropdown-content li a {
+        color: white;
+        padding: 12px 16px;
+        display: block;
+        transition: background-color 0.3s;
+      }
+      .dropdown-content li a:hover {
+        background-color: #2980b9;
+      }
+
+      /* HOVER EFFECT - desktop only */
+      .navbar .menu-item.has-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .login-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      .login-button:hover {
+        background-color: #c0392b;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+      }
+      
+
+      /* Navbar Mobile Styles */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-wrap: wrap;
+        }
+        .navbar .login-button {
+          order: 3;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-toggle {
+          display: block;
+        }
+        .navbar .nav-links {
+          width: 100%;
+          display: none;
+        }
+        .navbar .nav-links.active {
+          display: block;
+        }
+        .navbar .main-menu {
+          flex-direction: column;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-item > a {
+          text-align: left;
+        }
+        .dropdown-content {
+          position: static;
+          width: 100%;
+          border-left: 5px solid #3498db;
+          padding-left: 10px;
+        }
+        .dropdown-content li a {
+          padding-left: 35px;
+          background-color: #445970;
+        }
+        .navbar .menu-item.has-dropdown:hover .dropdown-content {
+          display: none;
+        }
+      }
+
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --accent: #0b63ff;
+      --muted: #6b7280;
+      --shadow: 0 8px 24px rgba(11,99,255,0.08);
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg) 0%, #eef4ff 100%);
+      color: #111;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* header {
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 8px;
+    } */
+
+    /* About Section (Top) */
+    #about {
+      /* background: white; */
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+    }
+    
+
+    
+    body {
+      background-image: url('./image1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    #about h2 {
+      color: var(--accent);
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    #about p {
+      max-width: 700px;
+      margin: 10px auto;
+      color: var(--muted);
+    }
+
+    /* Stackly Wallet Section */
+    .wallet-card {
+      max-width: 900px;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin: 50px auto;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .left {
+      flex: 1 1 55%;
+    }
+
+    .right {
+      flex: 1 1 35%;
+      background: #f8fbff;
+      border-radius: 12px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #0b63ff;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-outline {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px 20px;
+      margin: 20px 0 25px 0;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: #111827;
+    }
+
+    .ico {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #f1f6ff;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eaf1ff;
+      margin-top: 40px;
+      color: #555;
+    }
+
+    @media(max-width: 700px) {
+      .wallet-card {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer base */
+.footer {
+  background: linear-gradient(135deg, #0a0a1a, #1a1a3d);
+  color: white;
+  padding: 40px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+/* Footer container layout */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Footer sections */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Logo + About section */
+.footer-logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+.footer h3 {
+  margin-bottom: 10px;
+  color: #00e0b8;
+}
+
+/* Links section */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin: 8px 0;
+}
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #00e0b8;
+}
+
+/* Contact + social */
+.social-icons img {
+  width: 24px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 15px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+
+
+.footer {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+  </style>
+</head>
+<body>
+
   
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a href="index.html">
-            <img src="./image.png" alt="Stackly Logo" style="width: 100px;">
-          </a>
-        <div class="nav-links">
-          <ul class="main-menu">
-            <li class="menu-item has-dropdown">
-              <a href="index.html">HOME</a>
-              <ul class="dropdown-content">
-                <li><a href="home2.html">HOME2</a></li>
-              </ul>
-            </li>
-            <li class="menu-item has-dropdown">
-              <a href="products.html">PRODUCTS</a>
-              <ul class="dropdown-content">
-                <li><a href="product1.html">Stackly Pay</a></li>
-                <li><a href="product2.html">Stackly Wallet</a></li>
-                <li><a href="product3.html">Stackly Business API</a></li>
-              </ul>
-            </li>
-            <li class="menu-item has-dropdown">
-              <a href="about.html">ABOUT</a>
-              <ul class="dropdown-content">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="memb.html">Members</a></li>
-              </ul>
-            </li>
-            <li class="menu-item"><a href="blog.html">BLOG</a></li>
-            <li class="menu-item"><a href="contact.html">CONTACT</a></li>
-          </ul>
-        </div>
-        <a href="login.html"><button class="login-button">Login</button></a>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-          &#9776;
-        </button>
-      </nav>
-    </header>
-    <!-- NAVBAR PLACEHOLDER: This is where navbar.html content will be loaded -->
-    <header id="navbar-placeholder"></header>
+  <!-- 🟦 About Stackly Wallet (Top Section) -->
+  <section id="about">
+    <h2>About Stackly Wallet</h2>
+    <p>
+      <strong>Stackly Wallet</strong> is your trusted digital payment partner designed 
+      for seamless, secure, and instant money transfers. From paying bills and shopping 
+      online to recharging and earning rewards, Stackly Wallet keeps all your payments simple and smart.
+    </p>
+    <p>
+      Our mission is to make every digital transaction faster, safer, and easier for everyone — 
+      helping you go truly cashless with confidence.
+    </p>
+  </section>
 
-    <main class="product-page-main">
-      <!-- Product Introduction Hero (Text and Visual Side-by-Side) -->
-      <section class="product-intro-hero">
-        <div class="intro-content">
-          <span class="product-tagline"
-            >The Future of Business Transactions</span
-          >
-          <h1 class="product-hero-title">
-            Introducing
-            <span class="title-highlight-product">Stackly Pay</span>: Fast,
-            Secure, and Transparent Payments.
-          </h1>
-          <p class="product-hero-subtitle">
-            Stackly Pay simplifies your financial workflow, offering a unified
-            platform for processing payments, managing invoices, and reducing
-            overhead costs. Get paid instantly, globally.
-          </p>
-          <a href="./404E.html" class="cta-button cta-button-primary"
-            >Get Started Now</a
-          >
-        </div>
-        <div class="intro-visual">
-          <!-- Replace path/to/product_dashboard_mockup.png with your actual image -->
-          <img
-            src="https://img.freepik.com/free-vector/business-dashboard-user-panel_52683-26695.jpg?semt=ais_hybrid&w=740&q=80"
-            alt="Stackly Pay Dashboard Mockup"
-            class="product-mockup-img"
-          />
-        </div>
-      </section>
+  <!-- 🟩 Stackly Wallet Section with Features -->
+  <section class="wallet-card">
+    <div class="left">
+      <h1>Welcome to Stackly Wallet</h1>
+      <p>Manage your money easily — pay bills, shop online, and send money in seconds. 
+         Enjoy secure, fast, and reliable digital payments anywhere, anytime.</p>
 
-      <!-- Key Features Section (3-Column Grid) -->
-      <section class="product-section">
-        <h2 class="section-title">Why Businesses Choose Stackly Pay</h2>
-        <div class="features-grid">
-          <!-- Feature 1 -->
-          <div class="feature-card">
-            <!-- Replace path/to/icon_security.svg with your actual icon -->
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC51mGLQGrkCGfnebQ96fU-cjN4CBuitenmQ&sg"
-              alt="Security Icon"
-              class="feature-icon"
-            />
-            <h3>Bank-Grade Security</h3>
-            <p>
-              Protected by advanced encryption and fraud detection. Your money
-              and your customers' data are always safe.
-            </p>
-          </div>
-          <!-- Feature 2 -->
-          <div class="feature-card">
-            <!-- Replace path/to/icon_speed.svg with your actual icon -->
-            <img
-              src="https://blog.xoxoday.com/content/images/size/w1384/format/webp/2025/08/using-virtual-prepaid-cards-to-make-global-payments.png"
-              alt="Speed Icon"
-              class="feature-icon"
-            />
-            <h3>Instant Global Payouts</h3>
-            <p>
-              Process transactions and receive funds in seconds, regardless of
-              international borders or time zones.
-            </p>
-          </div>
-          <!-- Feature 3 -->
-          <div class="feature-card">
-            <!-- Replace path/to/icon_transparency.svg with your actual icon -->
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpV8JDZVVitqmAp7nb-6YV2QvQbMXH7fGO0zkAN9AJJ_g7zUfHjiJ_c9F1Xm2yj0vfZUU&usqp=CAU"
-              alt="Transparency Icon"
-              class="feature-icon"
-            />
-            <h3>Transparent Pricing</h3>
-            <p>
-              Say goodbye to hidden fees. Our pricing model is simple,
-              competitive, and designed for scalability.
-            </p>
-          </div>
-        </div>
-      </section>
+      <!-- ✨ Features Grid -->
+      <div class="features" aria-hidden="false">
+        <div class="feature"><span class="ico">⚡</span> Instant transfers</div>
+        <div class="feature"><span class="ico">🔒</span> Bank-grade security</div>
+        <div class="feature"><span class="ico">🛍️</span> Shop online easily</div>
+        <div class="feature"><span class="ico">💸</span> Cashback & rewards</div>
+      </div>
 
-      <!-- How It Works Section (3-Step Process) -->
-      <section class="product-section product-steps-section">
-        <h2 class="section-title">Your Payment Workflow in 3 Simple Steps</h2>
-        <div class="steps-container">
-          <!-- Step 1 -->
-          <div class="step-item">
-            <div class="step-number">1</div>
-            <h3>Integrate Easily</h3>
-            <p>
-              Add Stackly Pay to your website or app using our comprehensive,
-              simple API documentation.
-            </p>
-          </div>
-          <!-- Step 2 -->
-          <div class="step-item">
-            <div class="step-number">2</div>
-            <h3>Accept Payments</h3>
-            <p>
-              Your customers check out using cards, wallets, or bank
-              transfers—all on a seamless interface.
-            </p>
-          </div>
-          <!-- Step 3 -->
-          <div class="step-item">
-            <div class="step-number">3</div>
-            <h3>Manage & Grow</h3>
-            <p>
-              Track all your finances in one intuitive dashboard and reinvest
-              faster with instant payouts.
-            </p>
-          </div>
-        </div>
-      </section>
+      <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+      <button class="btn btn-outline" id="learnMoreBtn">Learn More</button>
+    </div>
 
-      <!-- Final CTA Section -->
-      <section class="product-cta-section">
-        <h2 class="section-title-white">Ready to Stack Your Success?</h2>
-        <p class="cta-text-white">
-          Join thousands of businesses that trust Stackly Pay to power their
-          growth.
-        </p>
-        <a href="contact.html" class="cta-button cta-button-secondary-white"
-          >Contact Sales Team</a
-        >
-      </section>
-    </main>
+    <div class="right">
+      <h3>Your Balance</h3>
+      <h2>₹2,540.00</h2>
+      <p>Last transaction: Paid electricity bill ₹600</p>
+    </div>
+  </section>
 
-    <!-- Scripts for Navbar Import (Requires script.js and navbar.html to be present) -->
-    <script src="script.js"></script>
-    <script>
-      loadHTML("navbar-placeholder", "navbar.html");
-    </script>
+  
 
+  <script>
+    // Redirect to login/signup when user clicks Get Started
+    document.getElementById("getStartedBtn").addEventListener("click", function() {
+      window.location.href = "login.html"; // change this to your actual login/signup page
+    });
+
+    // Scroll up to About section when Learn More clicked
+    document.getElementById("learnMoreBtn").addEventListener("click", function() {
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
 <footer class="footer">
     <div class="footer-container">
   
@@ -243,5 +561,5 @@
         
           </footer>
   
-  </body>
+</body>
 </html>
