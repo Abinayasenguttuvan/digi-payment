@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Marketing Agency</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+      <header>
+        <div class="container">
+          <a href="index.html" class="logo">
+            <img src="./image.png" alt="Stackly Logo">
+            <span>Digital Marketing  </span>
+          </a>
+          
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+          
+          <nav id="navbar">
+            <a href="index1.html">Home</a>
+            <a href="about1.html">About</a>
+            <a href="services1.html">Services</a>
+            <a href="blog1.html">Blog</a>
+            <a href="contact1.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header Section */
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9; */
+      color: #333;
+    }
+
+    /* Header Section */
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header Section */
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header {
+  background: #2c3e50;
+  color: white; */
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      /* background-color: #f9f9f9; */
+      color: #333;
+    }
+
+    header {
+      /* background: url('https://source.unsplash.com/1600x600/?technology,digital') center/cover no-repeat; */
+      color: white;
+      /* padding: 100px 20px; */
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 10px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      /* margin: 40px auto; */
+      padding: 0 20px;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .service-card img, .service-card iframe {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: cover;
+      flex: 1 1 300px;
+    }
+
+    .service-content {
+      flex: 1 1 400px;
+      padding: 30px;
+    }
+
+    .service-content h2 {
+      color: #0d47a1;
+      margin-top: 0;
+    }
+
+    .service-content p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #e3f2fd;
+      text-align: center;
+      padding: 30px 10px;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .service-card {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- SEO -->
+    <div class="service-card" data-aos="fade-up">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQTGp8aFk_s58rLO-MeYbawKsmsh1POGIuw&s" alt="SEO Services" />
+      <div class="service-content">
+        <h2>Search Engine Optimization (SEO)</h2>
+        <p>
+          Increase your visibility on search engines with our comprehensive SEO strategies. We optimize your website,
+          create valuable content, and build strong backlinks to help you rank higher and attract organic traffic.
+        </p>
+        <p><strong>Includes:</strong> On-page SEO, Technical SEO, Link Building, Local SEO</p>
+      </div>
+    </div>
+
+    <!-- PPC -->
+    <div class="service-card" data-aos="fade-up">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/WyW_8kMQmJM?si=HaWNyB_Lhd7Twykh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+      <div class="service-content">
+        <h2>Pay-Per-Click Advertising (PPC)</h2>
+        <p>
+          Maximize ROI with expertly crafted Google Ads and social media ad campaigns. We target the right keywords,
+          optimize bids, and design conversion-focused landing pages to turn clicks into customers.
+        </p>
+        <p><strong>Platforms:</strong> Google Ads, Meta (Facebook & Instagram), LinkedIn Ads</p>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="service-card" data-aos="fade-up">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNLUySSL0MHG588qk5khjvhfLsXPWnAE3h5g&s" alt="Social Media Marketing" />
+      <div class="service-content">
+        <h2>Social Media Marketing</h2>
+        <p>
+          Build a strong brand presence and engage your audience on platforms like Instagram, Facebook, LinkedIn,
+          and TikTok. Our creative team designs scroll-stopping content and manages your campaigns to grow your followers.
+        </p>
+        <p><strong>Services:</strong> Content Creation, Ad Campaigns, Community Management</p>
+      </div>
+    </div>
+
+    <!-- Content Marketing -->
+    <div class="service-card" data-aos="fade-up">
+      <img src="https://static.vecteezy.com/system/resources/previews/049/482/786/non_2x/coffee-laptop-and-notes-on-a-wooden-desk-photo.jpg" alt="Content Marketing" />
+      <div class="service-content">
+        <h2>Content Marketing</h2>
+        <p>
+          Educate, inform, and convert with high-quality content tailored to your audience. From blogs to video scripts,
+          we create strategic content that aligns with your brand voice and customer journey.
+        </p>
+        <p><strong>Formats:</strong> Blogs, Whitepapers, Video Scripts, eBooks</p>
+      </div>
+    </div>
+
+    <!-- Email Marketing -->
+    <div class="service-card" data-aos="fade-up">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/r2pkoxEBGjQ?si=nBaEr-1Nv8-sxDh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="service-content">
+        <h2>Email Marketing Automation</h2>
+        <p>
+          Stay connected with your audience using powerful email automation. We design, write, and automate personalized
+          email campaigns that boost engagement and drive revenue at every stage of the funnel.
+        </p>
+        <p><strong>Tools:</strong> Mailchimp, Klaviyo, HubSpot, ActiveCampaign</p>
+      </div>
+    </div>
+
+    <!-- Web Design -->
+    <div class="service-card" data-aos="fade-up">
+      <img src="https://thumbs.dreamstime.com/b/conceptual-hand-writing-showing-our-services-concept-meaning-occupation-function-serving-intangible-products-male-wear-160644151.jpg" alt="Web Design and Development" />
+      <div class="service-content">
+        <h2>Website Design & Development</h2>
+        <p>
+          Your website is your digital storefront. We build responsive, fast, and modern websites that look great on all
+          devices and convert visitors into leads and customers.
+        </p>
+        <p><strong>Technologies:</strong> HTML, WordPress, Webflow, Shopify</p>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+  
+      <!-- Column 1: Logo and About -->
+      <div class="footer-section about">
+        <img src="./image.png" alt="Stackly Logo" class="footer-logo">
+        <h3>Stackly Digital Payment Services</h3>
+        <p>Empowering businesses and users with fast, secure, and seamless digital transactions.</p>
+      </div>
+
+      
+  
+      <!-- Column 2: Quick Links -->
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">About Us</a></li>
+          <li><a href="about.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Column 3: Contact -->
+      <div class="footer-section contact">
+        <h4>Get in Touch</h4>
+        <p> MMR complex,salem,Tamil nadu 636008</p>
+        <p>Email: <a href="mailto:support@stackly.com">info@thestackly.com</a></p>
+        <p>Phone: +91 70107 92745</p>
+    
+        <div class="social-icons">
+            <a href="https://www.facebook.com/people/Stackly-Stackly/pfbid0JtGU9e9Lr3qi7T7zwqd7znjcKBFgJkRNUT9dkSAfVgj5Fea9cnwPDAaKFdqcZVvBl/?rdid=6mn5QnllxYJS3OSw&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BrqaZkJRe%2F"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/The_Stackly"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/the-stackly/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/thestackly/#"><i class="fab fa-instagram"></i></a>
+          </div>
+              <iframe
+                  src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                  width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+          
+          </footer>
+  
+  <script src="scripts.js"></script>
+</body>
+</html>
