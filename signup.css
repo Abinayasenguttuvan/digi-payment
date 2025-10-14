@@ -5,21 +5,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
- }
+}
 body {
   font-family: "Inter", sans-serif;
-  background-color: #f9fafb; Primary page background */
-} 
- a { 
-   text-decoration: none; 
- }  
-
-
- body {
-  background-image: url('./image1\.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #f9fafb; /* Primary page background */
+}
+a {
+  text-decoration: none;
 }
 
 
@@ -83,8 +75,6 @@ body {
 .navbar .menu-item.has-dropdown:hover .dropdown-content {
   display: block;
 }
-
-
 
 /* Login Button */
 .login-button {
@@ -961,7 +951,7 @@ body {
 /* 8. LOGIN PAGE STYLES */
 /* ------------------------------------------- */
 
-.login-page-main {
+.signup-page-main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -971,7 +961,7 @@ body {
   background-color: #ecf0f1; /* Light contrasting background */
 }
 
-.login-container {
+.signup-container {
   width: 100%;
   max-width: 400px;
   background-color: white;
@@ -981,28 +971,28 @@ body {
   text-align: center;
 }
 
-.login-title {
+.signup-title {
   font-size: 2rem;
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 8px;
 }
 
-.login-subtitle {
+.signup-subtitle {
   font-size: 1rem;
   color: #7f8c8d;
   margin-bottom: 30px;
 }
 
-.login-form {
+.signup-form {
   text-align: left;
 }
 
-.login-form .form-group {
+.signup-form .form-group {
   margin-bottom: 20px;
 }
 
-.login-form label {
+.signup-form label {
   display: block;
   margin-bottom: 6px;
   font-weight: 600;
@@ -1010,7 +1000,7 @@ body {
   font-size: 0.95rem;
 }
 
-.login-form input {
+.signup-form input {
   width: 100%;
   padding: 12px;
   border: 1px solid #dcdcdc;
@@ -1025,19 +1015,9 @@ body {
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
-.forgot-password {
-  display: block;
-  text-align: right;
-  font-size: 0.9rem;
-  color: #3498db;
-  margin-top: 8px;
-}
 
-.forgot-password:hover {
-  text-decoration: underline;
-}
 
-.login-submit-button {
+.signup-submit-button {
   background-color: #3498db;
   color: white;
   border: none;
@@ -1051,23 +1031,23 @@ body {
   margin-top: 10px;
 }
 
-.login-submit-button:hover {
+.signup-submit-button:hover {
   background-color: #2980b9;
   transform: translateY(-1px);
 }
 
-.login-footer {
+.signup-footer {
   margin-top: 30px;
   font-size: 0.95rem;
   color: #7f8c8d;
 }
 
-.login-footer a {
+.signup-footer a {
   color: #3498db;
   font-weight: 600;
 }
 
-.login-footer a:hover {
+.signup-footer a:hover {
   text-decoration: underline;
 }
 
@@ -1143,5 +1123,3 @@ body {
   font-size: 14px;
   color: rgba(255,255,255,0.8);
 }
-
-

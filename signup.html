@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login to Stackly Pay</title>
     <!-- Link to the cumulative site style sheet -->
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="signup.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -20,15 +20,21 @@
           </a>
     </header>
 
-    <main class="login-page-main">
-      <div class="login-container">
-        <h2 class="login-title">Welcome Back</h2>
-        <p class="login-subtitle">
+    <main class="signup-page-main">
+      <div class="signup-container">
+        <h2 class="signup-title">Welcome Back</h2>
+        <p class="signup-subtitle">
           Sign in to manage your payments and dashboard.
         </p>
 
-        <form class="login-form" action="404E.html">
+
+
+
+        <form class="signup-form" action="404E.html">
           <div class="form-group">
+            <label for="name">Name</label>
+            <input type="name" id="name" placeholder="Enter your name" required></div>
+             <div class="form-group">
             <label for="email">Email Address</label>
             <input
               type="email"
@@ -45,20 +51,19 @@
               type="password"
               id="password"
               name="password"
-              placeholder="••••••••"
+              placeholder="Enter your new password"
               required
             />
-            <a href="404E.html" class="forgot-password">Forgot Password?</a>
-          </div>
+          
 
-          <button type="submit" class="login-submit-button">
-            Log In Securely
+          <button type="submit" class="signup-submit-button">
+            Sign up Securely
           </button>
         </form>
   
 
-        <div class="login-footer">
-          <p>Don't have an account? <a href="signup.html.html">Sign Up Here</a></p>
+        <div class="signup-footer">
+          <p>Already have an account? <a href="login.html">Login Here</a></p>
         </div>
       </div>
     </main>
