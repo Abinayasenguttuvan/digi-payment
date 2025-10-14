@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital marketing Blog</title>
+  <!-- <link rel="stylesheet" href="styles1.css" /> -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index1.html" class="logo">
+        <img src="./image.png" alt="Stackly Logo">
+        <span>Digital Marketing Blog </span>
+      </a>
+      
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      
+      <nav id="navbar">
+        <a href="index1.html">Home</a>
+        <a href="about1.html">About</a>
+        <a href="services1.html">Services</a>
+        <a href="blog1.html">Blog</a>
+        <a href="contact1.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <style>
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
+  
+  /* Header */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  
+  .logo img {
+    height: 40px;
+    width: auto;
+    /* margin-right: 0.5rem; */
+  }
+  
+  /* Nav styles */
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #1abc9c;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #1abc9c;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Mobile */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      background: #34495e;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: none;
+      padding: 1rem 2rem;
+    }
+  
+    nav.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+
+  /* Header Section */
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #1abc9c;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    background: #34495e;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 1rem 2rem;
+  }
+  
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+}
+
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f9fc;
+    color: #2c3e50;
+    line-height: 1.6;
+    
+  }
+  
+  
+  /* Containers */
+  .container {
+    width: 90%;
+    /* max-width: 1200px; */
+    margin: auto;
+  }
+  
+  
+  /* Header */
+  header {
+    background: #2c3e50;
+    color: white;
+    padding: 1.5em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeDown 0.8s ease;
+  }
+  
+  
+  
+  header h1 {
+    float: left;
+    font-size: 1.8rem;
+  }
+  
+  nav {
+    float: right;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #1abc9c;
+  }
+  
+  
+  header::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .menu-toggle{
+    display:none;
+    color:white;
+    font-size: 1.5rem;
+    cursor:pointer;
+  }
+
+  nav{
+    float:right;
+  }
+  nav{
+    display:flex;
+    gap:1.5rem;
+  }
+  header::after{
+    content:"";
+    display:table;
+    clear:both;
+  }
+  
+    /* Hero Section */
+    .hero {
+    /* background: linear-gradient(to right, #16a085, #1abc9c); */
+    
+    color: rgb(246, 243, 243);
+    text-align: center;
+    padding: 5em 2em;
+    animation: fadeUp 1s ease;
+  }
+  
+  
+  
+  .hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5em;
+    animation: slideInLeft 1s ease;
+  }
+  
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5em;
+    animation: fadeIn 2s ease;
+  }
+  
+  .btn-primary {
+    background: white;
+    color: #1abc9c;
+    padding: 0.8em 1.5em;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  
+  .btn-primary:hover {
+    background: #16a085;
+    color: white;
+  }
+  
+    
+    
+    body { font-family: Arial, sans-serif; background: #f5f5f5;  }
+    /* .container { max-width: 800px; margin: auto; } */
+    .blog-list, .blog-detail { padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    body {
+    background-image: url('./image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+    /* .blog-card { border-bottom: 1px solid #ddd; padding: 10px 0; } */
+    /* .blog-card:last-child { border-bottom: none; } */
+    /* .blog-card h3 { margin: 0 0 5px; cursor: pointer; color: #007bff; } */
+    /* .back-btn { margin-top: 20px; display: inline-block; color: #007bff; cursor: pointer; } */
+    select { padding: 8px; margin-bottom: 20px; font-size: 16px; } */
+
+    /* Footer */
+  footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 3em;
+    animation: fadeIn 2s ease;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav {
+      float: none;
+      text-align: center;
+      margin-top: 1em;
+    }
+  
+    header h1 {
+      float: none;
+      text-align: center;
+    }
+  
+    .service-preview {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+  }
+  
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .footer {
+    background: linear-gradient(135deg, #0a0a1a, #1a1a3d);
+    color: white;
+    padding: 40px 20px 20px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+  }
+  
+  /* Footer container layout */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Footer sections */
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  /* Logo + About section */
+  .footer-logo {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+  .footer h3 {
+    margin-bottom: 10px;
+    color: #00e0b8;
+  }
+  
+  /* Links section */
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 8px 0;
+  }
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #ddd;
+    transition: color 0.3s;
+  }
+  .footer-section ul li a:hover {
+    color: #00e0b8;
+  }
+  
+  /* Contact + social */
+  .social-icons img {
+    width: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+  }
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Footer bottom */
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+  }
+  
+  
+  .footer {
+    animation: fadeIn 1.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  
+  
+  </style>
+</head>
+<body>
+
+  <!-- <div class="container"> -->
+
+    <!-- Blog List View -->
+    <div id="blogList" class="blog-list">
+      <h2>Digital Marketing Blog</h2>
+      
+      <!-- Category Filter -->
+      <label for="categoryFilter">Filter by Category:</label>
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="SEO">SEO</option>
+        <option value="Social Media">Social Media</option>
+        <option value="Email Marketing">Email Marketing</option>
+      </select>
+
+      <!-- Blog summaries will be injected here -->
+      <div id="blogCards"></div>
+    </div>
+
+    <!-- Blog Detail View -->
+    <div id="blogDetail" class="blog-detail" style="display:none;">
+      <h2 id="detailTitle">Title</h2>
+      <div id="detailContent">Full blog content</div>
+      <div class="back-btn" onclick="showList()">← Back to Blog List</div>
+    </div>
+
+  </div>
+
+  <script>
+    const blogs = [
+      {
+        id: "seo",
+        title: "Top SEO Tips for 2025",
+        category: "SEO",
+        summary: "Learn how to optimize your site for Google’s latest algorithm.",
+        content: `
+          <p>Search engine optimization (SEO) in 2025 is all about user intent, quality content, and site speed.</p>
+          <ul>
+            <li>Focus on helpful, original content.</li>
+            <li>Optimize for mobile and voice search.</li>
+            <li>Use schema markup to enhance visibility.</li>
+          </ul>
+          <p>Staying up-to-date with trends ensures your website ranks higher and gets more organic traffic.</p>
+        `
+      },
+      {
+        id: "social",
+        title: "How to Grow Your Brand on Social Media",
+        category: "Social Media",
+        summary: "Discover actionable tips to build engagement and followers.",
+        content: `
+          <p>Social media is a powerful tool for digital marketers. To grow your brand:</p>
+          <ul>
+            <li>Be consistent with your posts and branding.</li>
+            <li>Use short-form video and trending content.</li>
+            <li>Engage with your audience through comments and DMs.</li>
+          </ul>
+          <p>Each platform has its own style — tailor your message accordingly.</p>
+        `
+      },
+      {
+        id: "email",
+        title: "Email Marketing Strategies that Convert",
+        category: "Email Marketing",
+        summary: "Maximize your ROI with these proven email marketing tactics.",
+        content: `
+          <p>Email marketing continues to deliver high ROI in 2025. Here's how to do it right:</p>
+          <ul>
+            <li>Craft compelling subject lines and preview text.</li>
+            <li>Segment your list for personalized emails.</li>
+            <li>Track open and click rates to improve performance.</li>
+          </ul>
+          <p>Value-packed emails build trust and drive conversions.</p>
+        `
+      }
+    ];
+
+    const blogListEl = document.getElementById("blogList");
+    const blogDetailEl = document.getElementById("blogDetail");
+    const detailTitle = document.getElementById("detailTitle");
+    const detailContent = document.getElementById("detailContent");
+    const blogCardsEl = document.getElementById("blogCards");
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    function showList() {
+      blogDetailEl.style.display = "none";
+      blogListEl.style.display = "block";
+    }
+
+    function showBlog(id) {
+      const blog = blogs.find(b => b.id === id);
+      if (blog) {
+        detailTitle.textContent = blog.title;
+        detailContent.innerHTML = blog.content;
+        blogListEl.style.display = "none";
+        blogDetailEl.style.display = "block";
+      }
+    }
+
+    function renderBlogList(filter = '') {
+      blogCardsEl.innerHTML = '';
+      const filteredBlogs = blogs.filter(blog => {
+        return filter === '' || blog.category === filter;
+      });
+
+      if (filteredBlogs.length === 0) {
+        blogCardsEl.innerHTML = `<p>No blog posts found in this category.</p>`;
+      } else {
+        filteredBlogs.forEach(blog => {
+          const blogEl = document.createElement("div");
+          blogEl.className = "blog-card";
+          blogEl.innerHTML = `
+            <h3 onclick="showBlog('${blog.id}')">${blog.title}</h3>
+            <p><strong>Category:</strong> ${blog.category}</p>
+            <p>${blog.summary}</p>
+          `;
+          blogCardsEl.appendChild(blogEl);
+        });
+      }
+    }
+
+    // Event listener for category filter
+    categoryFilter.addEventListener("change", () => {
+      const selectedCategory = categoryFilter.value;
+      renderBlogList(selectedCategory);
+    });
+
+    // Initial render
+    renderBlogList();
+  </script>
+  <footer class="footer">
+    <div class="footer-container">
+  
+      <!-- Column 1: Logo and About -->
+      <div class="footer-section about">
+        <img src="./image.png" alt="Stackly Logo" class="footer-logo">
+        <h3>Stackly Digital Payment Services</h3>
+        <p>Empowering businesses and users with fast, secure, and seamless digital transactions.</p>
+      </div>
+
+      
+  
+      <!-- Column 2: Quick Links -->
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">About Us</a></li>
+          <li><a href="about.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Column 3: Contact -->
+      <div class="footer-section contact">
+        <h4>Get in Touch</h4>
+        <p> MMR complex,salem,Tamil nadu 636008</p>
+        <p>Email: <a href="mailto:support@stackly.com">info@thestackly.com</a></p>
+        <p>Phone: +91 70107 92745</p>
+    
+        <div class="social-icons">
+            <a href="https://www.facebook.com/people/Stackly-Stackly/pfbid0JtGU9e9Lr3qi7T7zwqd7znjcKBFgJkRNUT9dkSAfVgj5Fea9cnwPDAaKFdqcZVvBl/?rdid=6mn5QnllxYJS3OSw&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BrqaZkJRe%2F"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/The_Stackly"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/the-stackly/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/thestackly/#"><i class="fab fa-instagram"></i></a>
+          </div>
+              <iframe
+                  src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                  width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <div class="copyright">
+              <p>© 2025 Stackly | All Rights Reserved</p>
+            </div>
+        
+          </footer>
+  
+  
+  <!-- <script src="scripts.js"></script> -->
+
+</body>
+</html>
