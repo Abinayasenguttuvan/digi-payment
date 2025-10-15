@@ -9,7 +9,8 @@
   
   /* Header */
 header {
-    background: #2c3e50;
+  
+    background-color: #bed9f3;
     color: white;
     padding: 1.2rem 0;
     position: sticky;
@@ -26,6 +27,7 @@ header {
     align-items: center;
   }
   
+  
   .logo {
     display: flex;
     align-items: center;
@@ -34,6 +36,8 @@ header {
     font-size: 1.5rem;
     font-weight: bold;
   }
+  
+
   
   
   .logo img {
@@ -83,11 +87,53 @@ header {
     cursor: pointer;
   }
   
+  .navbar .main-menu {
+    list-style: none;
+    display: flex;
+  }
+  .navbar .menu-item {
+    position: relative;
+  }
+  .navbar .menu-item > a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  .navbar .menu-item > a:hover {
+    background-color: #34495e;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #34495e;
+    min-width: 180px;
+    z-index: 10;
+    list-style: none;
+    border-top: 3px solid #3498db;
+  }
+  .dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  .dropdown-content li a:hover {
+    background-color: #2980b9;
+  }
+
+  /* HOVER EFFECT - desktop only */
+  .navbar .menu-item.has-dropdown:hover .dropdown-content {
+    display: block;
+  }
   
   @media (max-width: 768px) {
     nav {
       flex-direction: column;
-      background: #34495e;
+      background-color: #bed9f3;
       position: absolute;
       top: 100%;
       left: 0;
@@ -108,7 +154,7 @@ header {
 
   /* Header Section */
 header {
-  background: #2c3e50;
+  background-color: #bed9f3;
   color: white;
   padding: 1.5rem 0;
   position: sticky;
@@ -224,7 +270,7 @@ nav a:hover::after {
   
   /* Header */
   header {
-    background: #2c3e50;
+    background-color: #bed9f3;
     color: white;
     padding: 1.5em 0;
     position: sticky;
