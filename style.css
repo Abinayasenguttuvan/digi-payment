@@ -404,7 +404,7 @@
 
       /* Footer base */
 .footer {
-    background: linear-gradient(135deg, #0a0a1a, #1a1a3d);
+  background: linear-gradient(135deg, #777793, #8f8fac);
     color: white;
     padding: 40px 20px 20px;
     font-family: 'Poppins', sans-serif;
