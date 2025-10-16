@@ -24,6 +24,10 @@
             <a href="services1.html">Services</a>
             <a href="blog1.html">Blog</a>
             <a href="contact1.html">Contact</a>
+            <a href="login.html"><button class="login-button">Login</button></a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+              &#9776;
+            </button>
           </nav>
         </div>
       </header>
@@ -197,6 +201,86 @@ header h1 {
         flex-direction: column;
       }
     }
+
+    .login-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      .login-button:hover {
+        background-color: #c0392b;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+
+      
+    body {
+      background-image: url('./image1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+
+
+
+      
+
+      /* Navbar Mobile Styles */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-wrap: wrap;
+        }
+        .navbar .login-button {
+          order: 3;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-toggle {
+          display: block;
+        }
+        .navbar .nav-links {
+          width: 100%;
+          display: none;
+        }
+        .navbar .nav-links.active {
+          display: block;
+        }
+        .navbar .main-menu {
+          flex-direction: column;
+          width: 100%;
+          margin-top: 10px;
+        }
+        .navbar .menu-item > a {
+          text-align: left;
+        }
+        .dropdown-content {
+          position: static;
+          width: 100%;
+          border-left: 5px solid #3498db;
+          padding-left: 10px;
+        }
+        .dropdown-content li a {
+          padding-left: 35px;
+          background-color: #445970;
+        }
+        .navbar .menu-item.has-dropdown:hover .dropdown-content {
+          display: none;
+        }
+      }
+
   </style>
 </head>
 <body>
