@@ -1,162 +1,159 @@
-* ------------------------------------------- */
-/* 1. GLOBAL & RESET */
-/* ------------------------------------------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
- }
-body {
-  font-family: "Inter", sans-serif;
-  background-color: #f9fafb; Primary page background */
-} 
- a { 
-   text-decoration: none; 
- }  
+* <!-- CONSOLIDATED CSS STYLES FOR NAVBAR AND HERO SECTION -->
+<style>
+  /* ------------------------------------------- */
+  /* 1. GLOBAL & RESET */
+  /* ------------------------------------------- */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: #f9fafb;
+  }
+  a {
+    text-decoration: none;
+  }
 
- 
-
-
-/* ------------------------------------------- */
-/* 2. NAVBAR STYLES */
-/* ------------------------------------------- */
-
-/* Navbar Container */
-.navbar {
-  background-color: #bed9f3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-    body {
-      background-image: url('./image1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    
-
-
-
-.navbar .logo-img {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-.navbar .main-menu {
-  list-style: none;
-  display: flex;
-}
-.navbar .menu-item {
-  position: relative;
-}
-.navbar .menu-item > a {
-  display: block;
-  color: white;
-  padding: 15px 20px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-}
-.navbar .menu-item > a:hover {
-  background-color: #34495e;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #34495e;
-  min-width: 180px;
-  z-index: 10;
-  list-style: none;
-  border-top: 3px solid #3498db;
-}
-.dropdown-content li a {
-  color: white;
-  padding: 12px 16px;
-  display: block;
-  transition: background-color 0.3s;
-}
-.dropdown-content li a:hover {
-  background-color: #2980b9;
-}
-.navbar .menu-item.has-dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-
-
-/* Login Button */
-.login-button {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-.login-button:hover {
-  background-color: #c0392b;
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-
-
-/* Navbar Mobile Styles */
-@media (max-width: 900px) {
+  /* ------------------------------------------- */
+  /* 2. NAVBAR STYLES */
+  /* ------------------------------------------- */
   .navbar {
-    flex-wrap: wrap;
+    background-color: #bed9f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  .navbar .login-button {
-    order: 3;
-    width: 100%;
-    margin-top: 10px;
-  }
-  .navbar .menu-toggle {
-    display: block;
-  }
-  .navbar .nav-links {
-    width: 100%;
-    display: none;
-  }
-  .navbar .nav-links.active {
+  .navbar .logo-img {
+    height: 40px;
+    width: auto;
     display: block;
   }
   .navbar .main-menu {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
+    list-style: none;
+    display: flex;
+  }
+  .navbar .menu-item {
+    position: relative;
   }
   .navbar .menu-item > a {
-    text-align: left;
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  .navbar .menu-item > a:hover {
+    background-color: #34495e;
   }
   .dropdown-content {
-    position: static;
-    width: 100%;
-    border-left: 5px solid #3498db;
-    padding-left: 10px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #34495e;
+    min-width: 180px;
+    z-index: 10;
+    list-style: none;
+    border-top: 3px solid #3498db;
   }
   .dropdown-content li a {
-    padding-left: 35px;
-    background-color: #445970;
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    transition: background-color 0.3s;
   }
+  .dropdown-content li a:hover {
+    background-color: #2980b9;
+  }
+
+  /* HOVER EFFECT - desktop only */
   .navbar .menu-item.has-dropdown:hover .dropdown-content {
-    display: none;
+    display: block;
   }
+
+  .login-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  .login-button:hover {
+    background-color: #c0392b;
+  }
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+
+  
+body {
+  background-image: url('./image1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+
+
+
+  
+
+  /* Navbar Mobile Styles */
+  @media (max-width: 900px) {
+    .navbar {
+      flex-wrap: wrap;
+    }
+    .navbar .login-button {
+      order: 3;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .navbar .menu-toggle {
+      display: block;
+    }
+    .navbar .nav-links {
+      width: 100%;
+      display: none;
+    }
+    .navbar .nav-links.active {
+      display: block;
+    }
+    .navbar .main-menu {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .navbar .menu-item > a {
+      text-align: left;
+    }
+    .dropdown-content {
+      position: static;
+      width: 100%;
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+    }
+    .dropdown-content li a {
+      padding-left: 35px;
+      background-color: #445970;
+    }
+    .navbar .menu-item.has-dropdown:hover .dropdown-content {
+      display: none;
+    }
+  }
+
 
 /* ------------------------------------------- */
 /* 3. HERO SECTION STYLES (from index.html) */
