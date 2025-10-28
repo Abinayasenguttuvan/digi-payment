@@ -1,0 +1,122 @@
+
+    /* margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  } */
+  /* body {
+    display: flex;
+    background: #f5f7fa;
+  } */
+  
+  /* Sidebar */
+  /* .sidebar {
+    width: 230px;
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+    color: white;
+    padding: 1.5rem;
+  }
+  .sidebar .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .sidebar li {
+    list-style: none;
+    padding: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .sidebar li:hover,
+  .sidebar li.active {
+    background: rgba(255,255,255,0.1);
+  } */
+  
+  /* Main */
+  .main {
+    flex: 1;
+    padding: 2rem;
+  }
+  /* header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .user-info img { border-radius: 50%; }
+  
+  /* Widgets */
+  .widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .widget {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgb(128, 155, 167);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+  .widget:hover { transform: translateY(-5px); }
+  .widget .icon {
+    font-size: 1.8rem;
+    background: #7c90a9;
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+  .widget .success { color: #16a34a; }
+  .widget .info { color: #2563eb; }
+  .widget .warning { color: #f59e0b; }
+  
+  /* Charts */
+  .charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .chart-card {
+    background: rgb(203, 222, 241);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  /* Live Feed */
+  .live-feed {
+    margin-top: 2rem;
+    background: rgb(203, 222, 241);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .live-feed ul {
+    list-style: none;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  .live-feed li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+  }
+  .live-feed li span.status {
+    font-weight: bold;
+  }
+  .live-feed li.success span.status { color: #16a34a; }
+  .live-feed li.failed span.status { color: #dc2626; }
+  .live-feed li.pending span.status { color: #f59e0b; }
+  
