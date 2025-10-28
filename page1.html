@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="page1.css" />
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <!-- <aside class="sidebar">
@@ -594,55 +596,72 @@
 
     <!-- KPI Widgets -->
     <section class="widgets">
-      <div class="widget">
-        <i class="fa-solid fa-sack-dollar icon"></i>
-        <div>
-          <h4>Total Revenue</h4>
-          <p id="totalRevenue">$0</p>
+        <div class="widget">
+          <i class="fa-solid fa-sack-dollar icon"></i>
+          <div>
+            <h4>Total Revenue</h4>
+            <p id="totalRevenue">$0</p>
+          </div>
         </div>
-      </div>
-      <div class="widget">
-        <i class="fa-solid fa-arrow-trend-up icon success"></i>
-        <div>
-          <h4>Success Rate</h4>
-          <p id="successRate">0%</p>
+        <div class="widget">
+          <i class="fa-solid fa-arrow-trend-up icon success"></i>
+          <div>
+            <h4>Success Rate</h4>
+            <p id="successRate">0%</p>
+          </div>
         </div>
-      </div>
-      <div class="widget">
-        <i class="fa-solid fa-users icon info"></i>
-        <div>
-          <h4>Active Users</h4>
+        <div class="widget">
+          <i class="fa-solid fa-receipt icon info"></i>
+          <div>
+            <h4>Transactions</h4>
+            <p id="totalTransactions">0</p>
+          </div>
+        </div>
+        <div class="widget">
+          <i class="fa-solid fa-user-tie icon warning"></i>
+          <div>
+            <h4>Top User</h4>
+            <p id="topUser">-</p>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Graphs & Analytics -->
+      <section class="charts">
+        <div class="chart-card">
+          <h3><i class="fa-solid fa-chart-bar"></i> Revenue by Payment Method</h3>
+          <canvas id="methodChart"></canvas>
+        </div>
+  
+        <div class="chart-card">
+          <h3><i class="fa-solid fa-circle-notch"></i> Transaction Status Overview</h3>
+          <canvas id="statusChart"></canvas>
+        </div>
+  
+        <div class="chart-card full">
+          <h3><i class="fa-solid fa-chart-area"></i> Monthly Revenue Trend</h3>
+          <canvas id="monthlyChart"></canvas>
+        </div>
+      </section>
+  
+      <!-- Quick Stats -->
+      <section class="stats">
+        <div class="stat-box">
+          <h4><i class="fa-solid fa-arrow-up-right-dots"></i> Average Transaction Value</h4>
+          <p id="avgTransaction">$0</p>
+        </div>
+        <div class="stat-box">
+          <h4><i class="fa-solid fa-clock-rotate-left"></i> Pending Transactions</h4>
+          <p id="pendingTransactions">0</p>
+        </div>
+        <div class="stat-box">
+          <h4><i class="fa-solid fa-users-line"></i> Active Users</h4>
           <p id="activeUsers">0</p>
         </div>
-      </div>
-      <div class="widget">
-        <i class="fa-solid fa-receipt icon warning"></i>
-        <div>
-          <h4>Live Transactions</h4>
-          <p id="transactionCount">0</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Charts -->
-    <section class="charts">
-      <div class="chart-card">
-        <h3><i class="fa-solid fa-chart-column"></i> Payment Methods</h3>
-        <canvas id="methodChart"></canvas>
-      </div>
-      <div class="chart-card">
-        <h3><i class="fa-solid fa-circle-notch"></i> Transaction Status</h3>
-        <canvas id="statusChart"></canvas>
-      </div>
-    </section>
-
-    <!-- Live Transaction Feed -->
-    <section class="live-feed">
-      <h3><i class="fa-solid fa-bolt"></i> Live Transaction Feed</h3>
-      <ul id="feedList"></ul>
-    </section>
-  </main>
-
+      </section>
+    </main>
+  
+    
   <script src="page1.js"></script>
 
   <script>
